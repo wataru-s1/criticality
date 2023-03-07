@@ -3,36 +3,29 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
 		try {
 
-//			エッジファイルをDATAという名前のディレクトリにおいてください。
-//			Filemaker.PathにはDATAの親ディレクトリのPATHを指定してください。
-//			Filemakderで指定したディレクトリ内のRESULTとILPという名前のディレクトリに結果が出力されます。
-//			該当箇所にRESULTとILPディレクトリがない場合は自動で作成されます。
-//			すでに同名のディレクトリが存在する場合は、その中に結果が作成されるので注意してください。
-			Filemaker.Path = "C:\\Users\\Someya Wataru\\Documents\\MDS\\LP_test";
+		    Scanner scanner = new Scanner(System.in);
+
+		    System.out.println("Please enter DATA folder path.");
+		    Filemaker.Path = scanner.next();
+
+		    if (!Filemaker.Path.endsWith("DATA")) {
+		    	System.out.println("folder is must be ended with \"DATA\"");
+		    	System.exit(0);
+		    }
+		    
+			Filemaker.Path = Filemaker.Path.split("\\\\DATA")[0].replace("\\", "\\\\");
 
 			File resultFolder = new File(Filemaker.Path + "\\RESULT");
 			File ilpFolder = new File(Filemaker.Path + "\\ILP");
 			if (resultFolder.exists() == false) resultFolder.mkdir();
 			if (ilpFolder.exists() == false) ilpFolder.mkdir();
-
-			File[] files2 = {
-//					"pathway_RTK_test_final"
-//					"cell2cell"
-//					"net_500_2.5_1_499_2_0_directed_edgelist",
-//					"net_500_2.5_1_499_2_1_directed_edgelist",
-//					"net_500_2.5_1_499_2_2_directed_edgelist",
-//					"net_500_2.5_1_499_2_3_directed_edgelist",
-//					"net_500_2.5_1_499_2_4_directed_edgelist",
-//					"undirected_scalefree_net_1"
-//					"directed_random_net_1"
-//					"directed_scalefree_net_1"
-			};
 
 			File[] files = new File(Filemaker.Path + "\\DATA").listFiles();
 
