@@ -17,7 +17,7 @@ Download all class files (files with &quot;class&quot; extension) in the &quot;c
 
 Place the file with the edge list under &quot;... /DATA&quot;.
 
-The network data should be writing using an edge list with tab-delimited as follows
+The network data should be written using an edge list with tab-delimited as follows
 
 v1 v2
 
@@ -38,7 +38,7 @@ java Main
 If it works correctly, you will see &quot;Please enter DATA folder path. Then, enter the path of &quot;...
 /DATA&quot;.
 
-The program will then execute the folder path in &quot;... /DATA&quot; and outputs the results in a folder
+The program will then execute the folder path in &quot;... /DATA&quot; and output the results in a folder
 named RESULT in the same hierarchy as the DATA.
 
 # Author
